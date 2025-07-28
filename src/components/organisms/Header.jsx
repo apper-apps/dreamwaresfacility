@@ -12,6 +12,7 @@ const navigationItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: "About", href: "/about" },
+    { label: "Portfolio", href: "/portfolio" },
     { label: "Agentforce", href: "/agentforce" },
     { label: "Contact", href: "/contact" }
   ];
