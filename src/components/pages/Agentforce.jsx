@@ -6,28 +6,28 @@ import ApperIcon from "@/components/ApperIcon";
 const Agentforce = () => {
   const capabilities = [
     {
-      title: "Intelligent Automation",
-      description: "Deploy AI agents that handle complex business processes with human-like intelligence and decision-making capabilities.",
+      title: "AI-Powered Automation",
+      description: "Transform your business operations with intelligent AI agents that automate complex workflows, eliminate manual tasks, and optimize processes in real-time.",
       icon: "Bot",
-      features: ["Process Automation", "Smart Decision Making", "Adaptive Learning", "Real-time Optimization"]
+      features: ["Workflow Automation", "Process Optimization", "Task Scheduling", "Smart Routing"]
     },
     {
-      title: "Customer Service Excellence",
-      description: "Transform customer interactions with AI agents that provide instant, personalized, and accurate support 24/7.",
-      icon: "MessageCircle",
-      features: ["24/7 Availability", "Multi-language Support", "Sentiment Analysis", "Escalation Management"]
+      title: "Intelligent Workflows",
+      description: "Create adaptive, self-improving workflows that learn from your business patterns and automatically adjust to changing conditions and requirements.",
+      icon: "GitBranch",
+      features: ["Adaptive Logic", "Dynamic Routing", "Smart Triggers", "Flow Optimization"]
     },
     {
-      title: "Sales Acceleration",
-      description: "Boost sales performance with AI agents that qualify leads, schedule meetings, and provide personalized recommendations.",
-      icon: "TrendingUp",
-      features: ["Lead Qualification", "Meeting Scheduling", "Product Recommendations", "Pipeline Management"]
+      title: "Data Integration",
+      description: "Seamlessly connect and unify data from multiple sources, creating a single source of truth that powers intelligent decision-making across your organization.",
+      icon: "Database",
+      features: ["Multi-Source Connectivity", "Real-time Sync", "Data Transformation", "API Integration"]
     },
     {
-      title: "Data-Driven Insights",
-      description: "Unlock actionable insights from your business data with AI agents that analyze patterns and predict trends.",
+      title: "Advanced Analytics",
+      description: "Leverage AI-driven analytics to uncover hidden insights, predict future trends, and make data-driven decisions that drive business growth and efficiency.",
       icon: "BarChart3",
-      features: ["Predictive Analytics", "Pattern Recognition", "Automated Reporting", "Performance Monitoring"]
+      features: ["Predictive Analytics", "Pattern Recognition", "Custom Dashboards", "Automated Reports"]
     }
   ];
 
