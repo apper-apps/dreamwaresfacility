@@ -37,8 +37,51 @@ export default {
           '0%': { opacity: '0', transform: 'scale(0.95)' },
           '100%': { opacity: '1', transform: 'scale(1)' }
         }
+},
+      backdropBlur: {
+        xs: '2px',
+      },
+      transitionTimingFunction: {
+        'bounce-in': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+      },
+      transitionDuration: {
+        '2000': '2000ms',
+        '3000': '3000ms',
       }
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      addUtilities({
+        '.scrollbar-hide': {
+          /* IE and Edge */
+          '-ms-overflow-style': 'none',
+          /* Firefox */
+          'scrollbar-width': 'none',
+          /* Safari and Chrome */
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          }
+        },
+        '.scrollbar-thin': {
+          'scrollbar-width': 'thin',
+          '&::-webkit-scrollbar': {
+            width: '6px',
+            height: '6px'
+          },
+          '&::-webkit-scrollbar-track': {
+            'background-color': '#f1f5f9'
+          },
+          '&::-webkit-scrollbar-thumb': {
+            'background-color': '#cbd5e1',
+            'border-radius': '3px'
+          },
+          '&::-webkit-scrollbar-thumb:hover': {
+            'background-color': '#94a3b8'
+          }
+        }
+      })
+    }
+  ],
 }

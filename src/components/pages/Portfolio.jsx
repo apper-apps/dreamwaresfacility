@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
+import { portfolioService } from "@/services/portfolioService";
 import ApperIcon from "@/components/ApperIcon";
 import PortfolioCard from "@/components/molecules/PortfolioCard";
 import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
 import Empty from "@/components/ui/Empty";
-import { portfolioService } from "@/services/portfolioService";
+import LazyImage from "@/components/ui/LazyImage";
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
@@ -187,12 +188,14 @@ const Portfolio = () => {
                 >
                   <ApperIcon name="X" size={24} />
                 </button>
-              </div>
+</div>
 
-              <img
+              <LazyImage
                 src={selectedProject.image}
+                webpSrc={selectedProject.image?.replace(/\.(jpg|jpeg|png)$/, '.webp')}
                 alt={selectedProject.title}
-                className="w-full h-64 object-cover rounded-lg mb-6"
+                className="w-full h-64 rounded-lg mb-6"
+                placeholder="/api/placeholder/800/400"
               />
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
