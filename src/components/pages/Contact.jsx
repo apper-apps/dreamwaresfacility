@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ContactForm from "@/components/molecules/ContactForm";
 import ApperIcon from "@/components/ApperIcon";
+import ContactForm from "@/components/molecules/ContactForm";
+import Services from "@/components/pages/Services";
 
 const Contact = () => {
   const contactInfo = [
@@ -20,11 +21,11 @@ const Contact = () => {
       action: "tel:+15551234567"
     },
     {
-      title: "Visit Us",
+title: "Visit Us",
       content: "San Francisco, CA",
-      description: "123 Innovation Street, Suite 456",
+      description: "123 Innovation Street, Suite 456, San Francisco, CA 94107",
       icon: "MapPin",
-      action: "https://maps.google.com"
+      action: "https://maps.google.com/search/?api=1&query=123+Innovation+Street+San+Francisco+CA"
     },
     {
       title: "Live Chat",
@@ -224,10 +225,91 @@ const Contact = () => {
                 </div>
               </motion.div>
             </div>
-          </div>
+</div>
         </div>
-      </section>
 
+        {/* Google Maps Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-2xl shadow-xl overflow-hidden"
+        >
+          <div className="p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Find Us on the Map
+            </h3>
+            
+            {/* Map Container */}
+            <div className="relative h-96 rounded-xl overflow-hidden shadow-lg mb-8">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0977!2d-122.4194!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0"
+              ></iframe>
+            </div>
+
+            {/* Office Locations Grid */}
+            <div className="grid md:grid-cols-3 gap-8">
+              {offices.map((office, index) => (
+                <motion.div
+                  key={office.city}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mb-4">
+                    <ApperIcon name="MapPin" size={24} className="text-white" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                    {office.city}
+                  </h4>
+                  <p className="text-gray-600 mb-2 text-sm leading-relaxed">
+                    {office.address}
+                  </p>
+                  <p className="text-sm text-gray-500 mb-1">{office.country}</p>
+                  <p className="text-xs text-blue-600 font-medium">
+                    {office.timezone}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Additional Contact Information */}
+            <div className="mt-12 p-8 bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl border border-gray-200">
+              <div className="text-center">
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">
+                  Business Hours
+                </h4>
+                <div className="grid md:grid-cols-2 gap-6 text-sm">
+                  <div>
+                    <p className="font-medium text-gray-700 mb-2">Weekdays</p>
+                    <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM PST</p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-700 mb-2">Weekends</p>
+                    <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM PST</p>
+                    <p className="text-gray-600">Sunday: Closed</p>
+                  </div>
+                </div>
+                <div className="mt-6 pt-6 border-t border-gray-200">
+                  <p className="text-gray-600 text-sm">
+                    Emergency support available 24/7 for enterprise clients
+                  </p>
+                </div>
+              </div>
+            </div>
+</div>
+        </motion.section>
+      </section>
       {/* FAQ Section */}
       <section className="py-20 bg-surface">
         <div className="section-container">
