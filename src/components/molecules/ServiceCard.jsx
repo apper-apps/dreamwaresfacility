@@ -4,12 +4,12 @@ import ApperIcon from "@/components/ApperIcon";
 
 const ServiceCard = ({ service, index }) => {
   return (
-    <motion.div
+<motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.6 }}
       viewport={{ once: true }}
-      className="bg-white p-8 rounded-xl shadow-md card-hover group"
+      className="bg-white p-6 sm:p-8 rounded-xl shadow-md card-hover group"
     >
       <div className="bg-gradient-to-br from-primary/10 to-accent/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
         <ApperIcon name={service.icon} size={32} className="text-primary" />

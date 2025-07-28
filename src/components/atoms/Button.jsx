@@ -18,10 +18,10 @@ const Button = forwardRef(({
     ghost: "text-gray-700 hover:bg-gray-100 focus:ring-gray-300"
   };
   
-  const sizes = {
-    sm: "px-4 py-2 text-sm",
-    default: "px-8 py-3 text-base",
-    lg: "px-10 py-4 text-lg"
+const sizes = {
+    sm: "px-4 py-2 text-sm min-h-[36px]",
+    default: "px-6 py-3 sm:px-8 text-base min-h-[44px]",
+    lg: "px-8 py-4 sm:px-10 text-lg min-h-[48px]"
   };
 
   return (

@@ -98,12 +98,12 @@ const navigationItems = [
             />
 
             {/* Mobile Menu */}
-            <motion.div
+<motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 20, stiffness: 100 }}
-              className="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 md:hidden"
+              className="fixed top-0 right-0 h-full w-full max-w-sm bg-white shadow-2xl z-50 md:hidden"
             >
               <div className="p-6">
                 <div className="flex items-center justify-between mb-8">

@@ -17,11 +17,11 @@ const Textarea = forwardRef(({
           {required && <span className="text-error ml-1">*</span>}
         </label>
       )}
-      <textarea
+<textarea
         ref={ref}
         rows={rows}
         className={cn(
-          "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors duration-200 outline-none resize-vertical bg-white",
+          "w-full px-4 py-3 sm:py-4 border-2 border-gray-300 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors duration-200 outline-none resize-vertical bg-white text-base sm:text-sm",
           error && "border-error focus:border-error focus:ring-error/20",
           className
         )}
