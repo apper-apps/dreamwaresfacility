@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
 import ApperIcon from "@/components/ApperIcon";
+import Button from "@/components/atoms/Button";
+import Input from "@/components/atoms/Input";
+import Textarea from "@/components/atoms/Textarea";
 
 const Agentforce = () => {
   const capabilities = [
@@ -77,7 +81,156 @@ const Agentforce = () => {
       description: "Real-time monitoring and analysis of transactions to identify and prevent fraudulent activities instantly.",
       results: ["95% fraud detection accuracy", "70% reduction in false positives", "Instant response times"]
     }
-  ];
+];
+
+  // Agentforce Contact Form Component
+  const AgentforceContactForm = () => {
+    const [formData, setFormData] = useState({
+      name: '',
+      email: '',
+      company: '',
+      phone: '',
+      interest: 'demo',
+      message: ''
+    });
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    };
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      setIsSubmitting(true);
+
+      try {
+        // Simulate API call
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        toast.success('Thank you for your interest! We\'ll contact you within 24 hours.', {
+          position: "top-right",
+          autoClose: 5000,
+        });
+
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          interest: 'demo',
+          message: ''
+        });
+      } catch (error) {
+        toast.error('Something went wrong. Please try again.', {
+          position: "top-right",
+          autoClose: 5000,
+        });
+      } finally {
+        setIsSubmitting(false);
+      }
+    };
+
+    return (
+      <div>
+        <h3 className="text-2xl font-bold mb-6 text-white">
+          Get Started with Agentforce
+        </h3>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="grid md:grid-cols-2 gap-4">
+            <Input
+              type="text"
+              name="name"
+              placeholder="Full Name *"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="bg-white/20 border-white/30 text-white placeholder-white/70"
+            />
+            <Input
+              type="email"
+              name="email"
+              placeholder="Email Address *"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="bg-white/20 border-white/30 text-white placeholder-white/70"
+            />
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-4">
+            <Input
+              type="text"
+              name="company"
+              placeholder="Company Name *"
+              value={formData.company}
+              onChange={handleChange}
+              required
+              className="bg-white/20 border-white/30 text-white placeholder-white/70"
+            />
+            <Input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+              className="bg-white/20 border-white/30 text-white placeholder-white/70"
+            />
+          </div>
+
+          <div>
+            <select
+              name="interest"
+              value={formData.interest}
+              onChange={handleChange}
+              className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+            >
+              <option value="demo" className="text-gray-900">Request Demo</option>
+              <option value="pricing" className="text-gray-900">Pricing Information</option>
+              <option value="consultation" className="text-gray-900">Technical Consultation</option>
+              <option value="partnership" className="text-gray-900">Partnership Opportunities</option>
+            </select>
+          </div>
+
+          <Textarea
+            name="message"
+            placeholder="Tell us about your specific needs and goals..."
+            value={formData.message}
+            onChange={handleChange}
+            rows={4}
+            className="bg-white/20 border-white/30 text-white placeholder-white/70"
+          />
+
+          <Button
+            type="submit"
+            disabled={isSubmitting || !formData.name || !formData.email || !formData.company}
+            className="w-full bg-white text-primary hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed py-3 text-lg font-semibold"
+          >
+            {isSubmitting ? (
+              <>
+                <ApperIcon name="Loader2" size={20} className="mr-2 animate-spin" />
+                Sending...
+              </>
+            ) : (
+              <>
+                <ApperIcon name="Send" size={20} className="mr-2" />
+                Send Inquiry
+              </>
+            )}
+          </Button>
+
+          <p className="text-sm text-white/70 text-center">
+            By submitting this form, you agree to our privacy policy and terms of service.
+          </p>
+        </form>
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen">
@@ -330,39 +483,86 @@ const Agentforce = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-accent text-white">
-        <div className="section-container text-center">
+{/* Enhanced CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-primary to-accent text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="section-container relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Deploy Your AI Workforce?
             </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto text-white/90">
               Join the AI revolution and transform your business operations with Agentforce. 
-              Schedule a personalized demo to see how AI agents can work for you.
+              Take the next step toward intelligent automation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 inline-flex items-center justify-center"
-              >
-                Schedule Demo
-                <ApperIcon name="Calendar" size={20} className="ml-2" />
-              </Link>
-              <Link
-                to="/services"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-all duration-200 inline-flex items-center justify-center"
-              >
-                Explore All Services
-                <ApperIcon name="ArrowRight" size={20} className="ml-2" />
-              </Link>
-            </div>
           </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Action Buttons */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h3 className="text-2xl font-bold mb-6 text-center lg:text-left">
+                Choose Your Next Step
+              </h3>
+              
+              <div className="space-y-4">
+                <Link
+                  to="/contact"
+                  className="w-full bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center justify-center group"
+                >
+                  <ApperIcon name="Calendar" size={24} className="mr-3 group-hover:rotate-12 transition-transform duration-200" />
+                  Request Demo
+                  <span className="ml-2 text-sm opacity-75">See Agentforce in action</span>
+                </Link>
+
+                <Link
+                  to="/services"
+                  className="w-full border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-all duration-200 flex items-center justify-center group"
+                >
+                  <ApperIcon name="BookOpen" size={24} className="mr-3 group-hover:scale-110 transition-transform duration-200" />
+                  Learn More
+                  <span className="ml-2 text-sm opacity-75">Explore all capabilities</span>
+                </Link>
+
+                <button
+                  onClick={() => {
+                    document.getElementById('agentforce-contact-form').scrollIntoView({ 
+                      behavior: 'smooth',
+                      block: 'center'
+                    });
+                  }}
+                  className="w-full bg-gradient-to-r from-accent to-primary text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center justify-center group"
+                >
+                  <ApperIcon name="Phone" size={24} className="mr-3 group-hover:rotate-12 transition-transform duration-200" />
+                  Contact Sales
+                  <span className="ml-2 text-sm opacity-75">Get personalized pricing</span>
+                </button>
+              </div>
+            </motion.div>
+
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20"
+              id="agentforce-contact-form"
+            >
+              <AgentforceContactForm />
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>
