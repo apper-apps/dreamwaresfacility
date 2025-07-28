@@ -243,7 +243,7 @@ const Agentforce = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+<h1 className="text-5xl md:text-6xl font-bold mb-6">
               Transform Your Business with <span className="text-yellow-300">Agentforce</span>
             </h1>
             <p className="text-xl md:text-2xl max-w-4xl mx-auto text-white/90 leading-relaxed mb-8">
@@ -277,7 +277,7 @@ const Agentforce = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-secondary mb-6">
+<h2 className="text-4xl font-bold text-secondary mb-6">
                 What is <span className="gradient-text">Agentforce?</span>
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
@@ -352,7 +352,7 @@ const Agentforce = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
+<h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
               Agentforce <span className="gradient-text">Capabilities</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -403,7 +403,7 @@ const Agentforce = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
+<h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
               Measurable <span className="gradient-text">Business Impact</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -441,7 +441,7 @@ const Agentforce = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
+<h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
               Real-World <span className="gradient-text">Success Stories</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -494,7 +494,7 @@ const Agentforce = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+<h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Deploy Your AI Workforce?
             </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto text-white/90">

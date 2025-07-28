@@ -86,7 +86,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
+<h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
               Our <span className="gradient-text">Services</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -155,7 +155,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
+<h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
               What Our <span className="gradient-text">Clients Say</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -203,7 +203,7 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+<h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto text-white/90">

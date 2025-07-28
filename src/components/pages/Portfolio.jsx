@@ -89,7 +89,7 @@ const Portfolio = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+<h1 className="text-4xl lg:text-6xl font-bold mb-6">
               Our <span className="gradient-text">Portfolio</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -180,7 +180,7 @@ const Portfolio = () => {
           >
             <div className="p-6">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold">{selectedProject.title}</h2>
+<h2 className="text-2xl font-bold">{selectedProject.title}</h2>
                 <button
                   onClick={closeProjectDetail}
                   className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"

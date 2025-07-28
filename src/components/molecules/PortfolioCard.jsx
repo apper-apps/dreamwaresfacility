@@ -21,9 +21,9 @@ const PortfolioCard = ({ project, index, onClick }) => {
     >
       {/* Project Image */}
 <div className="relative h-48 sm:h-52 md:h-48 overflow-hidden">
-        <img
+<img
           src={project.image}
-          alt={project.title}
+          alt={`${project.title} - Dreamwares Pro portfolio project showcasing ${project.category === 'agentforce' ? 'Agentforce AI automation' : 'premium technology'} solutions`}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           loading="lazy"
         />
@@ -43,7 +43,7 @@ const PortfolioCard = ({ project, index, onClick }) => {
       {/* Project Content */}
       <div className="p-6">
         <div className="flex items-start justify-between mb-3">
-          <h3 className="text-xl font-bold text-secondary group-hover:text-primary transition-colors duration-300">
+<h3 className="text-xl font-bold text-secondary group-hover:text-primary transition-colors duration-300">
             {project.title}
           </h3>
           <div className="flex items-center gap-1 text-warning">
