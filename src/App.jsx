@@ -1,18 +1,18 @@
-import React, { Suspense } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import { AnimatePresence, motion } from "framer-motion";
-import "@/index.css";
-import Layout from "@/components/organisms/Layout";
-import Portfolio from "@/components/pages/Portfolio";
-import Services from "@/components/pages/Services";
-import About from "@/components/pages/About";
-import Home from "@/components/pages/Home";
-import Agentforce from "@/components/pages/Agentforce";
-import Contact from "@/components/pages/Contact";
-import PageLoader from "@/components/atoms/PageLoader";
+import React, { Suspense } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+import { AnimatePresence, motion } from 'framer-motion'
+import '@/index.css'
+import Layout from '@/components/organisms/Layout'
+import Portfolio from '@/components/pages/Portfolio'
+import Services from '@/components/pages/Services'
+import About from '@/components/pages/About'
+import Home from '@/components/pages/Home'
+import Agentforce from '@/components/pages/Agentforce'
+import Contact from '@/components/pages/Contact'
+import PageLoader from '@/components/ui/PageLoader'
+
 function App() {
-  const location = useLocation();
 
   const pageTransition = {
     initial: { opacity: 0, y: 20 },
