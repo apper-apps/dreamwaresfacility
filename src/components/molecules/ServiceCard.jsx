@@ -24,10 +24,28 @@ const ServiceCard = ({ service, index }) => {
           </li>
         ))}
       </ul>
-      <button className="text-primary font-semibold hover:text-accent transition-colors duration-200 inline-flex items-center group/btn">
-        Learn More
-        <ApperIcon name="ArrowRight" size={16} className="ml-2 group-hover/btn:translate-x-1 transition-transform duration-200" />
-      </button>
+<div className="mt-auto">
+        <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-4 mb-4">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm font-semibold text-gray-600">Starting from</span>
+            <span className="text-lg font-bold text-primary">
+              {service.pricing?.basic?.price || '$2,500'}
+            </span>
+          </div>
+          <p className="text-xs text-gray-500">
+            {service.pricing?.basic?.timeline || '2-4 weeks'}
+          </p>
+        </div>
+        
+        <div className="flex gap-2">
+          <button className="flex-1 bg-gradient-to-r from-primary to-accent text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-sm">
+            Get Quote
+          </button>
+          <button className="text-primary font-semibold hover:text-accent transition-colors duration-200 inline-flex items-center group/btn px-3">
+            <ApperIcon name="ArrowRight" size={16} className="group-hover/btn:translate-x-1 transition-transform duration-200" />
+          </button>
+        </div>
+      </div>
     </motion.div>
   );
 };
