@@ -8,10 +8,11 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const navigationItems = [
+const navigationItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: "About", href: "/about" },
+    { label: "Agentforce", href: "/agentforce" },
     { label: "Contact", href: "/contact" }
   ];
 

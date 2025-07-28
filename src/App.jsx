@@ -6,15 +6,17 @@ import Home from "@/components/pages/Home";
 import Services from "@/components/pages/Services";
 import About from "@/components/pages/About";
 import Contact from "@/components/pages/Contact";
+import Agentforce from "@/components/pages/Agentforce";
 
 function App() {
   return (
     <>
       <Layout>
-        <Routes>
+<Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
+          <Route path="/agentforce" element={<Agentforce />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Layout>
